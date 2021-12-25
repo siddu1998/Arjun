@@ -23,6 +23,7 @@ public class CollisionScript : MonoBehaviour
         if(other.gameObject.tag=="Enemy"){
             Debug.Log(damage);
             Destroy(other.gameObject);
+            Destroy(gameObject);
             
         }
     }
