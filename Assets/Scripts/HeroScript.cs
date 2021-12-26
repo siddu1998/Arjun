@@ -14,6 +14,9 @@ public class HeroScript : MonoBehaviour
     public float astra_1_count = 10;
     public float astra_2_count = 10;
 
+    public GameObject astra_count_text;
+    public GameObject astra_1_count_text;
+
 
     public Transform bulletPos;
 
@@ -23,13 +26,17 @@ public class HeroScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //rb.velocity = new Vector3(0,0,speed);
+       astra_count_text.GetComponent<UnityEngine.UI.Text>().text = astra_count.ToString();
+       astra_1_count_text.GetComponent<UnityEngine.UI.Text>().text = astra_1_count.ToString();
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        astra_count_text.GetComponent<UnityEngine.UI.Text>().text = astra_count.ToString();                
+        astra_1_count_text.GetComponent<UnityEngine.UI.Text>().text = astra_1_count.ToString();
+
          if (Input.GetKey(KeyCode.UpArrow))  
         {  
             this.transform.Translate(Vector3.forward * Time.deltaTime*10);  
@@ -55,8 +62,9 @@ public class HeroScript : MonoBehaviour
             {
                 astra_count=astra_count-1;
                 GameObject spawned_astra = Instantiate(astra, bulletPos.position, bulletPos.transform.rotation);
-                spawned_astra.GetComponent<Rigidbody>().AddForce(bulletPos.forward*100);
+                spawned_astra.GetComponent<Rigidbody>().AddForce(bulletPos.forward*200);
                 Destroy (spawned_astra, 5.0f);
+
             }
             else{
                 Debug.Log("Out of BramhaAstra");
