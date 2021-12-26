@@ -5,7 +5,7 @@ using UnityEngine;
 public class CollisionScript : MonoBehaviour
 {
     public float damage;
-
+    public GameObject PowerRing;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +21,10 @@ public class CollisionScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.tag=="Enemy"){
-            Debug.Log(damage);
+            GameObject spawned_ring = Instantiate(PowerRing, other.gameObject.transform.position, other.gameObject.transform.rotation);
             Destroy(other.gameObject);
             Destroy(gameObject);
-            
+            Destroy (spawned_ring, 3.0f);
         }
     }
 }

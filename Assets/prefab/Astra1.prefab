@@ -126,3 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  PowerRing: {fileID: 3787692907036975803, guid: f27ad2f6e60994236814802594199cef, type: 3}

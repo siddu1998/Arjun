@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 40
+  PowerRing: {fileID: 150764843441813657, guid: 1f7071f431fca4c72be636e8e288cf55, type: 3}
 --- !u!96 &-3463258445153566458
 TrailRenderer:
   serializedVersion: 2
